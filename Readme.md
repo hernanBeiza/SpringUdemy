@@ -7,31 +7,31 @@
 * Spring Boot
 
 ## Apuntes 
-##Application Context
+## Application Context
 * Es un conjunto de beans ya funcionales
 * Dependencias resueltas entre el bean y la dependencia
 * ComponentScan
 * Busca en todas las clases si tienen una anotación. Permite identificar si existe un bean para la anotación
 * Se realiza desde un package inicial hacia adentro
  
-###@Component
+### @Component
 * Generica
 * Define un componente en el ApplicationContext
-###@Controller
+### @Controller
 * Es en base un@Component
 * Componente destinado para atender peticiones web, como @RequestMapping
 * Detecta peticiones web
 * @RequestMapping(path=“/info”)
 * @ReponseBody
 
-###@Service
+### @Service
 * Es en base un @Component
 * Componente con la lógica de negocio
 
-###@Repository
+### @Repository
 * Componente de acceso a base de datos
 
-###@Configuration
+### @Configuration
 * Componente que participará en la construcción del application context
 
 ## Proyectos
