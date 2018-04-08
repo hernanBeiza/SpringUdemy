@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Lista de nombres</h2>
+
+
+    <ol>
+        <!--
+          las iteraciones son algo mas complejas
+          En primer lugar, th:each nos da las pautas de la iteracion. La estructura es
+             variable_iteracion: expresion
+          En nuestro caso ${lista} indica que iteraremos sobre el atributo lista del model
+          Y fila indica que, en cada iteracion, la variable fila guarda el elemento actual
+
+          Hecho esto, ya solo queda usar th:text, como en el caso del titulo, empleando en este caso la
+          variable de iteracion fila
+         -->
+        <li th:each="fila: ${lista}" th:text="${fila}">valor</li>
+    </ol>
+
+    <form action="/add" method="post">
+        Nombre:<input type="text" name="nuevo"/>
+        <input type="submit" value="Nuevo"/>
+    </form>
+
+</body>
+</html>
