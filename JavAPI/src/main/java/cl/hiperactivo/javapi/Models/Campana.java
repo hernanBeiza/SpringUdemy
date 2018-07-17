@@ -1,44 +1,47 @@
-package cl.hiperactivo.javapi;
+package cl.hiperactivo.javapi.Models;
 
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
 @Table(name = "campana")
+@EntityListeners(AuditingEntityListener.class)
 public class Campana implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idcampana")
-    private Integer id;
+    private Long id;
 
+    @NotBlank
     @Column(name = "nombre")
     private String nombre;
 
     @Column(name = "fecha")
     private String fecha;
 
+    @NotBlank
     @Column(name = "url")
     private String url;
 
+    @NotBlank
     @Column(name = "email")
     private String email;
 
     @Column(name = "valid")
     private int valid;
 
-
-    //getters and setters
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -80,5 +83,17 @@ public class Campana implements Serializable {
 
     public void setValid(int valid) {
         this.valid = valid;
+    }
+
+    @Override
+    public String toString() {
+        return "Campana{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", url='" + url + '\'' +
+                ", email='" + email + '\'' +
+                ", valid=" + valid +
+                '}';
     }
 }
