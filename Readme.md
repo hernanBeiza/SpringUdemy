@@ -43,3 +43,6 @@ Ejemplo de inyección de dependencias usando beans, y anotaciones para el **Comp
 
 ### Proyecto Get
 Ejemplo de como capturar variables través de la URL, definir métodos **GET o POST**.
+
+## Documentación anexa
+Revisar el archivo Documentación/Spring - Apuntes.pdf
